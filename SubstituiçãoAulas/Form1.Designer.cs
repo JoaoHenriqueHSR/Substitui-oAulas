@@ -80,6 +80,7 @@
             label17 = new Label();
             txtTE3 = new TextBox();
             txtHSE3 = new TextBox();
+            lblHorasPSubstituir = new Label();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -559,12 +560,25 @@
             txtHSE3.Size = new Size(100, 23);
             txtHSE3.TabIndex = 0;
             // 
+            // lblHorasPSubstituir
+            // 
+            lblHorasPSubstituir.AutoSize = true;
+            lblHorasPSubstituir.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblHorasPSubstituir.ForeColor = SystemColors.ButtonHighlight;
+            lblHorasPSubstituir.Location = new Point(563, 430);
+            lblHorasPSubstituir.Name = "lblHorasPSubstituir";
+            lblHorasPSubstituir.Size = new Size(66, 21);
+            lblHorasPSubstituir.TabIndex = 25;
+            lblHorasPSubstituir.Text = "label18";
+            lblHorasPSubstituir.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1239, 469);
+            Controls.Add(lblHorasPSubstituir);
             Controls.Add(groupBox6);
             Controls.Add(groupBox5);
             Controls.Add(groupBox4);
@@ -652,5 +666,6 @@
         private Label label17;
         private TextBox txtTE3;
         private TextBox txtHSE3;
+        private Label lblHorasPSubstituir;
     }
 }

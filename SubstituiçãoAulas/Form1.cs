@@ -12,6 +12,7 @@ namespace SubstituiçãoAulas
             if (string.IsNullOrWhiteSpace(txtHS1.Text) && string.IsNullOrWhiteSpace(txtHS2.Text) && string.IsNullOrWhiteSpace(txtHS3.Text))
             {
                 MessageBox.Show("Pelo menos um dos campos precisa estar preenchido", "Alerta!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtHS1.Focus();
             }
             else
             {
@@ -90,8 +91,19 @@ namespace SubstituiçãoAulas
                 txtTE3.Text = horasEspeciaisAcrescimo3.ToString("F2");
 
                 //Total de horas semanais e mensais dentre todas as escolas
+                double totalMensal = subTotal1 + subTotal2 + subTotal3 + horasAulasSubstituidas + horasEspeciaisAcrescimo1 + horasEspeciaisAcrescimo2 + horasEspeciaisAcrescimo3;
                 txtTotalSemanal.Text = (horasETEC1 + horasETEC2 + horasETEC3 + horasEspeciais1 + horasEspeciais2 + horasEspeciais3).ToString("F2");
                 txtTotalMensal.Text = (subTotal1 + subTotal2 + subTotal3 + horasAulasSubstituidas + horasEspeciaisAcrescimo1 + horasEspeciaisAcrescimo2 + horasEspeciaisAcrescimo3).ToString("F2");
+
+                if (totalMensal > 200)
+                {
+                    MessageBox.Show("O total de horas mensais ultrapassou o limite de 200 horas.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    lblHorasPSubstituir.Text = $"Você pode substituir {((200-totalMensal) / 1.3).ToString("F2")} horas de aula no mês.";
+                    lblHorasPSubstituir.Visible = true;
+                }
             }
         }
 
